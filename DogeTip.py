@@ -25,9 +25,9 @@ _spam_filter = AntiSpamFilter(config["spam_filter"][0], config["spam_filter"][1]
 
 # Constants
 __wallet_rpc = RPCWrapper(BitcoinRPC(config["rpc-uri"], (config["rpc-user"], config["rpc-psw"])))
-__fee_std = 0.000010
+__fee_std = 2.000010
 __units = {
-	"parent_name": "BCH",
+	"parent_name": "DOGE",
 	"parent_format": "%.4f",
 	"name": "bits",
 	"symbol": u"\u20bf",
@@ -36,7 +36,7 @@ __units = {
 }
 __rpc_getbalance_account = True  # If True, use getbalance <account>, else use getbalance <address>
 __rpc_sendmany_account = False   # If False, use sendmany <source_account> {"address": amount}, else {"account": amount}
-__blockchain_explorer_tx = "https://blockchair.com/bitcoin-cash/transaction/"
+__blockchain_explorer_tx = "https://dogechain.info/tx/"
 __minconf = 0  # See issue #4 (https://github.com/DarthJahus/CashTip-Telegram/issues/4)
 
 
