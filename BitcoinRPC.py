@@ -38,7 +38,7 @@ class BitcoinRPC(object):
 		self.auth = auth
 
 	def http_post_request(self, name, args):
-		data = {"jsonrpc": "1.0", "id": "cashtip", "method": name, "params": args}
+		data = {"jsonrpc": "1.0", "id": "dogetip", "method": name, "params": args}
 		try:
 			req = requests.post(
 				url=self.uri,
@@ -73,7 +73,7 @@ def main():
 	# getaccountaddress creates an address if account doesn't exist.
 	# warning, getaccountaddress will create a new address for the account if its current address has been used
 	# use getaddressesbyaccount instead
-	res = myBitcoin.getaddressesbyaccount("@arasdawn")
+	res = myBitcoin.getaddressesbyaccount("@monkeydc")
 	if not res["success"]:
 		print("Error: %s" % res["message"])
 	else:
@@ -82,7 +82,7 @@ def main():
 		else:
 			print(json.dumps(res["result"]["result"]))
 	return
-	res = myBitcoin.sendmany("CashTip", {"@jahus": 0.00005, "1234": 0.00006})
+	res = myBitcoin.sendmany("DogeTip", {"@monkeydc": 1.00005, "1234": 1.00006})
 	if not res["success"]:
 		print("Error: %s" % res["message"])
 	else:
